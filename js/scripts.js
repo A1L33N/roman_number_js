@@ -20,6 +20,11 @@ var romanNumeral = function(year) {
       };
     };
 
+    if ((yearsLeft/900) >= 1) {
+      yearsLeft = yearsLeft - 900
+      result.push('CM')
+    };
+
     if ((yearsLeft/500) >= 1) {
       numberOfDs = Math.floor(yearsLeft/500);
       yearsLeft = yearsLeft % 500;
@@ -29,13 +34,25 @@ var romanNumeral = function(year) {
       };
     };
 
+
+
     if ((yearsLeft/100) >= 1) {
       numberOfCs = Math.floor(yearsLeft/100);
       yearsLeft = yearsLeft % 100;
 
-      for (var i = 0; i < numberOfCs; i++) {
-        result.push('C');
+      if (numberOfCs === 4) {
+        result.push("CD")
+
+      } else {
+        for (var i = 0; i < numberOfCs; i++) {
+          result.push('C');
+        };
       };
+    };
+
+    if ((yearsLeft/90) >= 1) {
+      yearsLeft = yearsLeft - 90
+      result.push('XC')
     };
 
     if ((yearsLeft/50) >= 1) {
@@ -47,13 +64,25 @@ var romanNumeral = function(year) {
       };
     };
 
+
+
     if ((yearsLeft/10) >= 1) {
       numberOfXs = Math.floor(yearsLeft/10);
       yearsLeft = yearsLeft % 10;
 
-      for (var i = 0; i < numberOfXs; i++) {
-        result.push('X');
+      if (numberOfXs === 4) {
+        result.push("XL");
+      } else {
+        for (var i = 0; i < numberOfXs; i++) {
+          result.push('X');
+
+        };
       };
+    };
+
+    if ((yearsLeft/9) >= 1) {
+      yearsLeft = yearsLeft - 9
+      result.push('IX')
     };
 
     if ((yearsLeft/5) >= 1) {
@@ -69,8 +98,13 @@ var romanNumeral = function(year) {
       numberOfIs = Math.floor(yearsLeft/1);
       yearsLeft = yearsLeft % 1;
 
-      for (var i = 0; i < numberOfIs; i++) {
-        result.push('I');
+      if (numberOfIs === 4) {
+        result.push("IV")
+
+      } else {
+        for (var i = 0; i < numberOfIs; i++) {
+          result.push('I');
+        };
       };
     };
 

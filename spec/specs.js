@@ -27,5 +27,29 @@ describe("romanNumeral", function() {
     expect(romanNumeral(3666)).to.eql(['M', 'M', 'M', 'D', 'C', 'L', 'X', 'V', 'I'])
   });
 
+  it('accounts for 900', function() {
+    expect(romanNumeral(1900)).to.eql(['M', 'CM'])
+  });
+
+  it('accounts for 400', function() {
+    expect(romanNumeral(1449)).to.eql(['M', 'CD', 'XL', 'IX'])
+  });
+
+
+  it('accounts for 40', function() {
+    expect(romanNumeral(1140)).to.eql(['M', 'C', 'XL'])
+  });
+
+  it('accounts for 90', function() {
+    expect(romanNumeral(1190)).to.eql(['M', 'C', 'XC'])
+  });
+
+  it('accounts for 9', function() {
+    expect(romanNumeral(1149)).to.eql(['M', 'C', 'XL', 'IX'])
+  });
+
+  it('accounts for 4', function() {
+    expect(romanNumeral(1154)).to.eql(['M', 'C', 'L', 'IV'])
+  });
 
 });
