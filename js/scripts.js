@@ -108,22 +108,26 @@ var romanNumeral = function(year) {
       };
     };
 
+    result = result.join('');
+
     return result;
   };
 
-
-
 };
 
-// $(document).ready(function(){
-//   $('form#THING').submit(function(event){
-//     var convertNum = parseInt($('input#convert-num').val());
-//
-//     //stuff here
-//
-//     var result = // stuff
-//
-//     $('#result').text(result);
-//     event.preventDefault();
-//   });
-// });
+$(document).ready(function(){
+  $('form#roman-numeral').submit(function(event){
+    var year = parseInt($('input#year').val());
+    if (year > 3999) {
+      alert("Roman years can't be more than 3999. Please try again!")
+    } else {
+      var result = romanNumeral(year);
+
+      $('#input-year').text(year);
+      $('#roman-result').text(result);
+
+      $('.result').show();
+      event.preventDefault();
+    };
+  });
+});

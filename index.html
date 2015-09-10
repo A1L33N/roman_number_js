@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Count Up!</title>
+  <title>Roman Numeral</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css" media="screen" title="no title" charset="utf-8">
   <script src="js/jquery-1.11.3.js"></script>
@@ -9,22 +9,23 @@
 </head>
 <body>
   <div class="container">
+    <center><h1>Romanize it!</h1></center>
     <center>
-      <form id="count-up">
+      <form id="roman-numeral">
         <div class="form-group">
           <div class="row">
-            <label for="count_to">Enter a number to count to:</label>
-            <input type="number" name="count_to" id="count_to" required min="1">
-          </div>
-          <div class="row">
-            <label for="count_by">Enter a number to count by:</label>
-            <input type="number" name="count_by" id="count_by" required min="1">
+            <label for="year">Enter year to convert to a Roman Numeral:</label>
+            <input type="number" name="year" id="year" required min="1">
           </div>
         </div>
-        <button type="submit" class="btn">Count!</button>
+        <button type="submit" class="btn">Go!</button>
       </form>
-      <div class="result">
-        <span id="count-result"></span>
+
+      <br><br>
+      <div class="row">
+        <div class="result">
+          <p><span id="input-year"></span> in Roman numerals is: <span id="roman-result"></span>.</p>
+        </div>
       </div>
     </center>
   </div>
